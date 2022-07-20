@@ -27,7 +27,10 @@
             
             <div v-if="error" class="alert alert-danger" > {{error}} </div>
             <ul v-else id="mail-list" class="list-group">
-                <li v-if="mails.length === 10" v-for="mail in mails" class="list-group-item"> {{mail}}</li>
+                <div v-if="mails.length !== 10"> 
+                    <i class="fa-solid fa-spinner fa-spin fa-4x"></i>
+                </div>
+                <li v-else v-for="mail in mails" class="list-group-item"> {{mail}}</li>
             </ul>
         </div>
 
