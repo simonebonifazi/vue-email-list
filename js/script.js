@@ -17,7 +17,7 @@ const app = new Vue({
             .then((res) => {
                 this.mail = res.data.response
                 console.log(res.data.response)
-            }).catch((error) => {
+            }).catch(() => {
                 this.error = 'Ops! Qualcosa è andato storto..'
             })
     }
