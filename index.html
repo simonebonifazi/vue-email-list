@@ -23,10 +23,13 @@
 
 <body>
     <div id="root">
-
-        <ul id="mail-list">
-            <li></li>
-        </ul>
+        <div class="container" >
+            
+            <div v-if="error" class="alert alert-danger" > {{error}} </div>
+            <ul v-else id="mail-list" class="list-group">
+                <li class="list-group-item"></li>
+            </ul>
+        </div>
 
     </div>
     <!-- JavaScript -->
