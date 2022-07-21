@@ -3,17 +3,15 @@ const app = new Vue({
     el: '#root',
     data: {
         mails: [],
+        emailNumbers: 10,
         error: '',
     },
     computed: {
 
+
     },
     methods: {
-
-
-    },
-    created() {
-        for (let i = 0; i <= 9; i++) {
+        createNewEmail() {
 
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((res) => {
@@ -22,6 +20,12 @@ const app = new Vue({
                 }).catch(() => {
                     this.error = 'Ops! Qualcosa è andato storto..'
                 })
+        }
+
+    },
+    created() {
+        for (let i = 0; i <= 9; i++) {
+            this.createNewEmail()
         }
     }
 })
