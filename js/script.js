@@ -7,7 +7,9 @@ const app = new Vue({
         error: '',
     },
     computed: {
-
+        emailsLength() {
+            return this.mails.length === this.emailNumbers
+        }
 
     },
     methods: {
